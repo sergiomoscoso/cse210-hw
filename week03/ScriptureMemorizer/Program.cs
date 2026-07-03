@@ -11,6 +11,11 @@ class Program
         Console.Write("Choose an option: ");
 
         string choice = Console.ReadLine()?.Trim() ?? "";
+        if (string.IsNullOrWhiteSpace(choice))
+        {
+            choice = "1";
+        }
+
         Scripture scripture;
 
         if (choice == "2")
@@ -66,8 +71,7 @@ class Program
                     Console.WriteLine(scripture.GetDisplayString());
                     Console.WriteLine();
                     Console.WriteLine("Congratulations! You memorized the entire scripture.");
-                    Console.WriteLine("Press any key to exit...");
-                    Console.ReadKey();
+                    Console.WriteLine("The program will now close.");
                     keepRunning = false;
                 }
             }
